@@ -1,0 +1,11 @@
+def check_list(slist):
+    final = []
+    for obj in slist:
+        if isinstance(obj, list):
+            final.extend(check_list(obj))
+        else:
+            final.append(obj)
+    return final
+s=[1,[2,3],[4,[[5,6],7,[8]]]]
+flist = check_list(s)
+print(flist)
